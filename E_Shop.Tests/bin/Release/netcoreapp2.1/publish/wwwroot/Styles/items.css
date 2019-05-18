@@ -1,0 +1,43 @@
+﻿.frame {
+	box-sizing: border-box;
+	padding: 10px 0px 19px 10px;
+	border: 1px solid #e5d497;
+	background: #fff;
+	position: relative;
+	margin: 0px 0px 10px 0px;
+	min-height:185px;
+}
+.thumbnail-container {
+	width: 30%;
+	min-width: 220px;
+	max-height: 180px;
+	float:left;
+	overflow:hidden;
+}
+.desc-container {
+	width: 48%;
+	float: left;
+	overflow: hidden;
+}
+.price-container {
+	width: 20%;
+	float: left;
+	overflow:hidden;
+	padding: 15px 10px 2% 0px;
+	text-align: right;
+	height: 90%
+}
+
+
+.image-container {
+	width: 50%;
+	min-width: 350px;
+	float: left;
+	overflow: hidden;
+}
+.content-container {
+	width: 50%;
+	padding: 10px 0px 10px;
+	float: left;
+	overflow: hidden;
+}
