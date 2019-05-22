@@ -1,0 +1,12 @@
+D:\Лабы\3 курс\E_Shop\EShop.BLL\bin\Debug\netcoreapp2.2\EShop.DAL.dll
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.csprojAssemblyReference.cache
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.csproj.CoreCompileInputs.cache
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.AssemblyInfoInputs.cache
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.AssemblyInfo.cs
+D:\Лабы\3 курс\E_Shop\EShop.BLL\bin\Debug\netcoreapp2.2\EShop.BLL.deps.json
+D:\Лабы\3 курс\E_Shop\EShop.BLL\bin\Debug\netcoreapp2.2\EShop.BLL.dll
+D:\Лабы\3 курс\E_Shop\EShop.BLL\bin\Debug\netcoreapp2.2\EShop.BLL.pdb
+D:\Лабы\3 курс\E_Shop\EShop.BLL\bin\Debug\netcoreapp2.2\EShop.DAL.pdb
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.csproj.CopyComplete
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.dll
+D:\Лабы\3 курс\E_Shop\EShop.BLL\obj\Debug\netcoreapp2.2\EShop.BLL.pdb
