@@ -1,9 +1,0 @@
-D:\Лабы\3 курс\E_Shop\EShop.DAL\bin\Release\netcoreapp2.2\EShop.DAL.deps.json
-D:\Лабы\3 курс\E_Shop\EShop.DAL\bin\Release\netcoreapp2.2\EShop.DAL.dll
-D:\Лабы\3 курс\E_Shop\EShop.DAL\bin\Release\netcoreapp2.2\EShop.DAL.pdb
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.csprojAssemblyReference.cache
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.csproj.CoreCompileInputs.cache
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.AssemblyInfoInputs.cache
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.AssemblyInfo.cs
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.dll
-D:\Лабы\3 курс\E_Shop\EShop.DAL\obj\Release\netcoreapp2.2\EShop.DAL.pdb
