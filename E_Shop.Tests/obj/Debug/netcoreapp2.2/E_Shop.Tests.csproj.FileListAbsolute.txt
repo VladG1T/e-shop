@@ -17,5 +17,4 @@ D:\Лабы\3 курс\E_Shop\E_Shop.Tests\bin\Debug\netcoreapp2.2\EShop.pdb
 D:\Лабы\3 курс\E_Shop\E_Shop.Tests\obj\Debug\netcoreapp2.2\E_Shop.Tests.csproj.CopyComplete
 D:\Лабы\3 курс\E_Shop\E_Shop.Tests\obj\Debug\netcoreapp2.2\E_Shop.Tests.dll
 D:\Лабы\3 курс\E_Shop\E_Shop.Tests\obj\Debug\netcoreapp2.2\E_Shop.Tests.pdb
-D:\Лабы\3 курс\E_Shop\E_Shop.Tests\bin\Debug\netcoreapp2.2\E_Shop.db
 D:\Лабы\3 курс\E_Shop\E_Shop.Tests\bin\Debug\netcoreapp2.2\EShop.xml

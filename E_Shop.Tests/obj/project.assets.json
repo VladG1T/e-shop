@@ -12627,8 +12627,8 @@
     },
     "EShop/1.0.0": {
       "type": "project",
-      "path": "../EShop/EShop.csproj",
-      "msbuildProject": "../EShop/EShop.csproj"
+      "path": "../e-shop-pog/EShop.csproj",
+      "msbuildProject": "../e-shop-pog/EShop.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12675,8 +12675,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Лабы\\3 курс\\E_Shop\\EShop\\EShop.csproj": {
-              "projectPath": "D:\\Лабы\\3 курс\\E_Shop\\EShop\\EShop.csproj"
+            "D:\\Лабы\\3 курс\\E_Shop\\e-shop-pog\\EShop.csproj": {
+              "projectPath": "D:\\Лабы\\3 курс\\E_Shop\\e-shop-pog\\EShop.csproj"
             }
           }
         }
