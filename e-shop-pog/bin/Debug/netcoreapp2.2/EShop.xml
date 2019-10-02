@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EShop</name>
+    </assembly>
+    <members>
+        <member name="M:EShop.Controllers.AccountController.Login">
+            <summary>
+            Navigate to login page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Login(EShop.Models.LoginModel)">
+            <summary>
+            Post login model
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Register">
+            <summary>
+            Navigate to register page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Register(EShop.Models.RegisterModel)">
+            <summary>
+            Post register model
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.ViewAcc">
+            <summary>
+            Navigate to account page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Update">
+            <summary>
+            Navigate to update-account page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Update(EShop.Models.RegisterModel)">
+            <summary>
+            Post model to update account
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Submit(System.Boolean)">
+            <summary>
+            Submit cart
+            </summary>
+            <param name="submit"></param>
+        </member>
+        <member name="M:EShop.Controllers.AccountController.Logout">
+            <summary>
+            Log out
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.CartController.Add(System.String,System.String,System.Double,System.String)">
+            <summary>
+            Add item to cart
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.CartController.Remove(System.Int32)">
+            <summary>
+            Remove item from cart
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:EShop.Controllers.CategoriesController.Index">
+            <summary>
+            Navigate to start page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.CommentController.Post">
+            <summary>
+            Navigate to comment page
+            </summary>
+        </member>
+        <member name="M:EShop.Controllers.CommentController.Post(EShop.Models.CommentModel,System.String)">
+            <summary>
+            Post comment
+            </summary>
+            <param name="model"></param>
+            <param name="returnUrl"></param>
+        </member>
+        <member name="M:EShop.Controllers.CoolingController.Get(System.String,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get cooling systems list
+            </summary>
+            <param name="cooling_type"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.CoolingController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get cooling system by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.MemoryController.Get(System.String,System.Double,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get RAM items list
+            </summary>
+            <param name="ram_type"></param>
+            <param name="min_buffer"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.MemoryController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get RAM item by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.MotherboardsController.Get(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get motherboards list
+            </summary>
+            <param name="has_ethernet"></param>
+            <param name="has_wifi"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.MotherboardsController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get motherboard by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.PowerSuppliesController.Get(System.Nullable{System.Boolean},System.Int32,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get power supplies list
+            </summary>
+            <param name="over_volt"></param>
+            <param name="max_power"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.PowerSuppliesController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get power supply by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.ProcessorsController.Get(System.String,System.Int32,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Get processor list
+            </summary>
+            <param name="vendor"></param>
+            <param name="min_cores"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.ProcessorsController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get processor by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.StorageController.Get(System.String,System.Int32,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get storage devices list
+            </summary>
+            <param name="storage_type"></param>
+            <param name="min_storage"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.StorageController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get storage device by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:EShop.Controllers.VideocardsController.Get(System.String,System.Double,System.Double,EShop.Helpers.SortOrder,System.Int32,System.Int32)">
+            <summary>
+            Get videocards list
+            </summary>
+            <param name="vendor"></param>
+            <param name="min_vram"></param>
+            <param name="max_price"></param>
+            <param name="sortOrder"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:EShop.Controllers.VideocardsController.Get(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Get videocard by id
+            </summary>
+            <param name="id"></param>
+            <param name="success"></param>
+        </member>
+    </members>
+</doc>

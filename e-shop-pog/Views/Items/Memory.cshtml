@@ -1,0 +1,115 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper "*, EShop"
+@model IndexViewModel<Memory>
+@{
+	ViewBag.Title = "Memory";
+}
+@if (Context.Request.Query["success"].FirstOrDefault() == "true") {
+	<div class="alert alert-success">
+		<h4 class="alert-heading">Success!</h4>
+		The item has been added to cart.
+	</div>
+}
+<div>
+	<div style="width: 20%; float: left; overflow: hidden;">
+		<form method="get">
+			<b style="font-size: 16px">Filters</b><br />
+			<b style="font-size: 12px">RAM buffer:</b><br />
+
+			@foreach (var i in Model.FilterViewModel.Min_buffer_list) {
+				<div class="custom-control custom-radio" style="float:left">
+					@Html.RadioButton("min_buffer", i, new { @class = "custom-control-input", id = String.Format("radio_min_buffer_{0}", i) })
+					@Html.Label(i.ToString(), i.ToString(), new { @class = "custom-control-label", @for = String.Format("radio_min_buffer_{0}", i), style = "margin-right:14px" })
+				</div>
+			}
+
+			<br /><br /><br />
+
+			<b style="font-size: 12px">Max price:</b><br />
+			@Html.TextBox("max_price", Model.FilterViewModel.Max_price, new { @class = "form-control", style = "width:90%" }) <br />
+
+			<b style="font-size: 12px">RAM type:</b><br />
+
+			@foreach (var i in Model.FilterViewModel.RAM_type_list) {
+				<div class="custom-control custom-radio" style="float:left">
+					@Html.RadioButton("ram_type", i, new { @class = "custom-control-input", id = String.Format("radio_ram_type_{0}", i) })
+					@Html.Label(i.ToString(), i.ToString(), new { @class = "custom-control-label", @for = String.Format("radio_ram_type_{0}", i), style = "margin-right:14px" })
+				</div>
+			}
+
+			<br />
+
+			<hr />
+
+			<input id="btn_apply" type="submit" value="Apply" asp-action="Get" class="btn-primary btn-lg" />
+		</form>
+	</div>
+
+	<div style="width: 80%; float: left; overflow: hidden;">
+		<table class="table">
+			<tr>
+				<th>
+					<b>Sort by:</b>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.NameSort)" asp-action="Get"
+					   asp-route-buffer="@(Model.FilterViewModel.Min_buffer)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-ram_type="@(Model.FilterViewModel.RAM_type)">Name</a>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.RAMBufferSort)" asp-action="Get"
+					   asp-route-buffer="@(Model.FilterViewModel.Min_buffer)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-ram_type="@(Model.FilterViewModel.RAM_type)">Buffer size</a>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.PriceSort)" asp-action="Get"
+					   asp-route-buffer="@(Model.FilterViewModel.Min_buffer)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-ram_type="@(Model.FilterViewModel.RAM_type)">Price</a>
+				</th>
+			</tr>
+		</table>
+		@foreach (Memory item in Model.Items) {
+			<div class="frame">
+				<div class="thumbnail-container">
+					<img style="height:100%;width:100%" src="@Url.Content(String.Format("~{0}", item.ImgURL))" />
+				</div>
+				<div class="desc-container">
+					<h3 style="font-size:20px; font-weight:bold;">
+						@item.Name Memory
+					</h3>
+					<hr style="margin: -5px 0 7px 0;" />
+					<div class="desc">
+						frequency: @item.Frequency MHz, RAM: @item.Buffer Gb, Type: @item.Type ...
+						<a href=@String.Format("/memory/view/{0}", item.Id.ToString())>view more</a>
+					</div>
+					<hr style="margin: 6px 0 0px 0;" />
+				</div>
+				<div class="price-container">
+					<b style="font-size:20px; font-weight:bold;">Price: @item.Price$</b>
+					<br />
+					<div style="margin-top:35px">
+						<form method="post" asp-action="Add" asp-controller="Cart">
+							<input type="hidden" name="name" value="@item.Name" />
+							<input type="hidden" name="imgURL" value="@item.ImgURL" />
+							<input type="hidden" name="price" value="@item.Price" />
+							<input type="hidden" name="category" value="Memory" />
+							<input type="submit" class="btn-warning btn-lg" value="Add" />
+						</form>
+					</div>
+				</div>
+			</div>
+		}
+		<page-link page-model="Model.PageViewModel" page-action="Get"
+				   page-url-buffer="@(Model.FilterViewModel.Min_buffer)"
+				   page-url-max_price="@(Model.FilterViewModel.Max_price)"
+				   page-url-ram_type="@(Model.FilterViewModel.RAM_type)"
+				   page-url-sortorder="@(Model.SortViewModel.Current)">
+		</page-link>
+	</div>
+
+</div>

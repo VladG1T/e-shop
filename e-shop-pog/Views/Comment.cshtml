@@ -1,0 +1,15 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+@model EShop.Models.CommentModel
+<form asp-action="Post" asp-controller="Comment">
+	<div class="validation" asp-validation-summary="ModelOnly" />
+	<input type="text" asp-for="Username" readonly value="@Context.Request.Query["username"]" /><br />
+	<input type="hidden" asp-for="CategoryName" value="@Context.Request.Query["categoryName"]" />
+	<input type="hidden" asp-for="ItemId" value="@Context.Request.Query["itemId"]" />
+	<input type="hidden" name="returnUrl" value="@Context.Request.Headers["Referer"]" />
+	<input type="text" asp-for="Body" style="width:100%; height:100px" /><br />
+
+	<input type="submit" value="Publish" class="btn" />
+
+</form>

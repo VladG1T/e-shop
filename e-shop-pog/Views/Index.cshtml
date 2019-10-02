@@ -1,0 +1,22 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Category>
+@{
+	ViewBag.Title = "Index";
+}
+<table class="table table-condensed table-striped table-bordered">
+	@foreach (Category item in Model) {
+		if ((item.Id - 1) % 3 == 0) {
+			@:<tr>
+			}
+			<td style="width:150px; height:30px">
+				@*@Html.ActionLink(item.Name, null, item.Name.Replace(" ", string.Empty).ToLower())*@
+				<a href=@String.Format("/{0}/view?page=1", item.Name.Replace(" ", string.Empty).ToLower())>@item.Name</a>
+			</td>
+
+			if (item.Id % 3 == 0) {
+			@:</tr>
+		}
+	}
+</table>

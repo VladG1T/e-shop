@@ -1,0 +1,104 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper "*, EShop"
+@model IndexViewModel<PowerSupply>
+@{
+	ViewBag.Title = "PowerSupplies";
+}
+@if (Context.Request.Query["success"].FirstOrDefault() == "true") {
+	<div class="alert alert-success">
+		<h4 class="alert-heading">Success!</h4>
+		The item has been added to cart.
+	</div>
+}
+<div>
+	<div style="width: 20%; float: left; overflow: hidden;">
+		<form method="get">
+			<b style="font-size: 16px">Filters</b><br />
+
+			<b style="font-size: 12px">Power:</b><br />
+			@Html.TextBox("max_power", Model.FilterViewModel.Max_power, new { @class = "form-control", style = "width:90%" }) <br />
+
+			<b style="font-size: 12px">Max price:</b><br />
+			@Html.TextBox("max_price", Model.FilterViewModel.Max_price, new { @class = "form-control", style = "width:90%" }) <br />
+
+			<div class="custom-control custom-checkbox mb-3" style="float:left">
+				@Html.CheckBox("over_volt", new { @class = "custom-control-input", id = "chkbx_over_volt" })
+				@Html.Label("OverVolt", "Over-voltage protection", new { @class = "custom-control-label", @for = "chkbx_over_volt", style = "margin-right:14px" })
+			</div>
+
+			<br />
+
+			<hr />
+
+			<input id="btn_apply" type="submit" value="Apply" asp-action="Get" class="btn-primary btn-lg" />
+		</form>
+	</div>
+
+	<div style="width: 80%; float: left; overflow: hidden;">
+		<table class="table">
+			<tr>
+				<th>
+					<b>Sort by:</b>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.NameSort)" asp-action="Get"
+					   asp-route-over_volt="@(Model.FilterViewModel.Over_volt)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-max_power="@(Model.FilterViewModel.Max_power)">Name</a>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.MaxPowerSort)" asp-action="Get"
+					   asp-route-over_volt="@(Model.FilterViewModel.Over_volt)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-max_power="@(Model.FilterViewModel.Max_power)">Power</a>
+				</th>
+				<th>
+					<a asp-route-sortOrder="@(Model.SortViewModel.PriceSort)" asp-action="Get"
+					   asp-route-over_volt="@(Model.FilterViewModel.Over_volt)"
+					   asp-route-max_price="@(Model.FilterViewModel.Max_price)"
+					   asp-route-max_power="@(Model.FilterViewModel.Max_power)">Price</a>
+				</th>
+			</tr>
+		</table>
+		@foreach (PowerSupply item in Model.Items) {
+			<div class="frame">
+				<div class="thumbnail-container">
+					<img style="height:100%;width:100%" src="@Url.Content(String.Format("~{0}", item.ImgURL))" />
+				</div>
+				<div class="desc-container">
+					<h3 style="font-size:20px; font-weight:bold;">
+						@item.Name Power Supply
+					</h3>
+					<hr style="margin: -5px 0 7px 0;" />
+					<div class="desc">
+						max power: @item.MaxPower W, over voltage protection: @item.HasOverVoltageProtection, voltage: @item.MaxVoltage ...
+						<a href=@String.Format("/powersupplies/view/{0}", item.Id.ToString())>view more</a>
+					</div>
+					<hr style="margin: 6px 0 0px 0;" />
+				</div>
+				<div class="price-container">
+					<b style="font-size:20px; font-weight:bold;">Price: @item.Price$</b>
+					<br />
+					<div style="margin-top:35px">
+						<form method="post" asp-action="Add" asp-controller="Cart">
+							<input type="hidden" name="name" value="@item.Name" />
+							<input type="hidden" name="imgURL" value="@item.ImgURL" />
+							<input type="hidden" name="price" value="@item.Price" />
+							<input type="hidden" name="category" value="PowerSupply" />
+							<input type="submit" class="btn-warning btn-lg" value="Add" />
+						</form>
+					</div>
+				</div>
+			</div>
+		}
+		<page-link page-model="Model.PageViewModel" page-action="Get"
+				   page-url-over_volt="@(Model.FilterViewModel.Over_volt)"
+				   page-url-max_price="@(Model.FilterViewModel.Max_price)"
+				   page-url-has_wifi="@(Model.FilterViewModel.Max_power)"
+				   page-url-sortorder="@(Model.SortViewModel.Current)">
+		</page-link>
+	</div>
+
+</div>

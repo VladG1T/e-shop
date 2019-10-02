@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"]</title>
+	<link href="@Url.Content("~/Styles/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Styles/items.css")" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+</head>
+<body>
+	<!--меню-->
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div>
+				<a href="~/index" class="btn-light btn-lg" style="margin-bottom:3px">Main Page</a>
+				<a href="~/account/view" class="btn-light btn-lg" style="margin-bottom:3px">Account</a>
+				@if (User.Identity.Name != null) {
+					<a href="~/account/logout" class="btn-light btn-lg" style="margin-bottom:3px">Log Out</a>
+				}
+			</div>
+		</div>
+	</nav>
+	<!--основной контент-->
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>© 2019 - EShop</p>
+		</footer>
+	</div>
+</body>
+</html>

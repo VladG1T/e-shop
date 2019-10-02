@@ -1,0 +1,66 @@
+﻿@{
+	Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h1 class="alert alert-info">@ViewBag.Item.Name Power Supply</h1>
+@if (Context.Request.Query["success"].FirstOrDefault() == "true") {
+	<div class="alert alert-success">
+		<h4 class="alert-heading">Success!</h4>
+		The item has been added to cart.
+	</div>
+}
+<hr />
+<div>
+	<div class="image-container">
+		<img style="width:100%" src="@Url.Content(String.Format("~{0}", ViewBag.Item.ImgURL))" />
+		<hr />
+		<h2>Price: @ViewBag.Item.Price$</h2>
+		<form method="post" asp-action="Add" asp-controller="Cart">
+			<input type="hidden" name="name" value="@ViewBag.Item.Name" />
+			<input type="hidden" name="imgURL" value="@ViewBag.Item.ImgURL" />
+			<input type="hidden" name="price" value="@ViewBag.Item.Price" />
+			<input type="hidden" name="category" value="PowerSupply" />
+			<input type="submit" class="btn-warning btn-lg" value="Add" />
+		</form>
+	</div>
+	<div class="content-container">
+		<b style="font-size: 18px">Specs:</b>
+		<br />
+		<table class="table table-condensed table-striped table-bordered">
+			<tr>
+				<td>Name</td>
+				<td>@ViewBag.Item.Name</td>
+			</tr>
+			<tr>
+				<td>Max power</td>
+				<td>@ViewBag.Item.MaxPower W</td>
+			</tr>
+			<tr>
+				<td>Max voltage</td>
+				<td>@ViewBag.Item.MaxVoltage V</td>
+			</tr>
+			<tr>
+				<td>Max current</td>
+				<td>@ViewBag.Item.MaxCurrent A</td>
+			</tr>
+			<tr>
+				<td>Over volt protection</td>
+				<td>@ViewBag.Item.HasOverVoltageProtection</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<a class="btn btn-light" style="margin-top:4px; margin-bottom:6px" href=@String.Format("/comment/post?username={0}&categoryName={1}&itemId={2}", User.Identity.Name, "PowerSupply", ViewBag.Item.Id)>Post a comment</a>
+	</div>
+	<div>
+		@if (((IQueryable<Comment>)ViewBag.Comments).Any()) {
+			foreach (Comment i in ViewBag.Comments) {
+				<div class="frame" style="height:auto">
+					<label style="font-size:18px; margin-bottom:-3px">@i.Username</label><br />
+					<label style="font-size:10px; font-weight:lighter">@i.Date</label><br />
+					<label style="font-size:14px; font-weight:normal"><b>Comment: </b>@i.Body</label><br />
+				</div>
+			}
+		}
+	</div>
+</div>
+
